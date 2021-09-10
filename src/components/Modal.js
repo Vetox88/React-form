@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
@@ -83,23 +83,7 @@ export const Modal = ({ showModal, setShowModal }) => {
         }
     };
 
-    const keyPress = useCallback(
-        e => {
-            if (e.key === 'Escape' && showModal) {
-                setShowModal(false);
-                console.log('I pressed');
-            }
-        },
-        [setShowModal, showModal]
-    );
 
-    useEffect(
-        () => {
-            document.addEventListener('keydown', keyPress);
-            return () => document.removeEventListener('keydown', keyPress);
-        },
-        [keyPress]
-    );
 
     return (
         <>
@@ -107,8 +91,9 @@ export const Modal = ({ showModal, setShowModal }) => {
                 <Background onClick={closeModal} ref={modalRef}>
                     <animated.div style={animation}>
                         <ModalWrapper showModal={showModal}>
-                            <LogoContainer><Logo /></LogoContainer>
-
+                            <LogoContainer>
+                                <Logo />
+                            </LogoContainer>
                             <ModalContent>
                                 <h1>Want a free ticket?</h1>
                                 <p>Sign up to get it!</p>
