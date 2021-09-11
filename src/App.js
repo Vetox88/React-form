@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Modal } from './components/Modal';
 import { GlobalStyle } from './globalStyles';
+import Form from './components/Form'
 
 const Container = styled.div`
   display: flex;
@@ -11,14 +12,20 @@ const Container = styled.div`
 `;
 
 const Button = styled.button`
-  min-width: 100px;
-  padding: 16px 32px;
-  border-radius: 4px;
-  border: none;
-  background: #141414;
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
+width: 10%;
+height: 50px;
+margin-top: 10px;
+border-radius: 10px;
+background: linear-gradient(
+  90deg,
+  rgb(39, 176, 255) 0%,
+  rgb(0, 232, 236) 100%
+);
+outline: none;
+border: none;
+color: #fff;
+font-size: 1rem;
+cursor: pointer;
 `;
 
 function App() {
@@ -31,8 +38,10 @@ function App() {
   return (
     <>
       <Container>
-        <Button onClick={openModal}>I'm a modal</Button>
+
+        <Button onClick={openModal}>Sign up!</Button>
         <Modal showModal={showModal} setShowModal={setShowModal} />
+
         <GlobalStyle />
       </Container>
     </>
