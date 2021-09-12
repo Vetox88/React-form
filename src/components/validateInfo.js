@@ -8,8 +8,12 @@ export default function validateInfo(values) {
         errors.lastName = 'Username required';
     }
 
-    if (!/^([4][2])\d{6}$/.test(values.phoneNumber)) {
+    if (!/^([4][2])\d{6}$/ && !null(values.phoneNumber)) {
         errors.phoneNumber = 'Not a Danish number';
+    }
+
+    if (values.phoneNumber == null) {
+        errors.phoneNumber = 'Nfasfasfanumber';
     }
 
     if (!values.email) {
