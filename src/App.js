@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Modal } from './components/Modal';
+import { Modal } from './containers/Modal';
 import { GlobalStyle } from './globalStyles';
 import Form from './components/Form'
 
@@ -39,7 +39,7 @@ function App() {
     <>
       <Container>
 
-        <Button onClick={openModal}>Sign up!</Button>
+        <Button onClick={openModal}>Enter!</Button>
         <Modal showModal={showModal} setShowModal={setShowModal} />
 
         <GlobalStyle />

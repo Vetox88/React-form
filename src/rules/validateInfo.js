@@ -12,10 +12,6 @@ export default function validateInfo(values) {
         errors.phoneNumber = 'Not a Danish number';
     }
 
-    if (values.phoneNumber == null) {
-        errors.phoneNumber = 'Nfasfasfanumber';
-    }
-
     if (!values.email) {
         errors.email = 'Email required';
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {

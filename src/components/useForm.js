@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 const useForm = (callback, validate) => {
@@ -32,8 +31,6 @@ const useForm = (callback, validate) => {
         e.preventDefault();
         setErrors(validate(values));
         setIsSubmitting(true);
-
-
     };
 
     useEffect(
@@ -61,7 +58,6 @@ const useForm = (callback, validate) => {
                     .then(response => response.text())
                     .then(result => console.log(result))
                     .catch(error => console.log('error', error));
-
             }
         },
         [errors]
